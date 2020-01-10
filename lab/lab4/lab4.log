@@ -1,0 +1,78 @@
+suosu01 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_lvm": {
+            "lvs": {
+                "home": {
+                    "size_g": "491.98", 
+                    "vg": "vg00"
+                }, 
+                "root": {
+                    "size_g": "50.00", 
+                    "vg": "vg00"
+                }, 
+                "swap": {
+                    "size_g": "15.69", 
+                    "vg": "vg00"
+                }
+            }, 
+            "pvs": {
+                "/dev/sda3": {
+                    "free_g": "0.01", 
+                    "size_g": "557.68", 
+                    "vg": "vg00"
+                }
+            }, 
+            "vgs": {
+                "vg00": {
+                    "free_g": "0.01", 
+                    "num_lvs": "3", 
+                    "num_pvs": "1", 
+                    "size_g": "557.68"
+                }
+            }
+        }, 
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false
+}
+suosu02 | SUCCESS => {
+    "ansible_facts": {
+        "ansible_lvm": {
+            "lvs": {
+                "home": {
+                    "size_g": "100.02", 
+                    "vg": "vg00"
+                }, 
+                "root": {
+                    "size_g": "150.00", 
+                    "vg": "vg00"
+                }, 
+                "swap": {
+                    "size_g": "15.56", 
+                    "vg": "vg00"
+                }, 
+                "var": {
+                    "size_g": "500.99", 
+                    "vg": "vg00"
+                }
+            }, 
+            "pvs": {
+                "/dev/sda3": {
+                    "free_g": "0.01", 
+                    "size_g": "766.58", 
+                    "vg": "vg00"
+                }
+            }, 
+            "vgs": {
+                "vg00": {
+                    "free_g": "0.01", 
+                    "num_lvs": "4", 
+                    "num_pvs": "1", 
+                    "size_g": "766.58"
+                }
+            }
+        }, 
+        "discovered_interpreter_python": "/usr/bin/python"
+    }, 
+    "changed": false
+}

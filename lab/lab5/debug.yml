@@ -1,0 +1,15 @@
+--- 
+- hosts: linux
+  tasks:
+    - debug:
+        msg: 
+          - "System {{ inventory_hostname }} is running {{ ansible_os_family }}" 
+          - "uuid is {{ ansible_product_uuid }}" 
+          - "IPv4 address {{ ansible_default_ipv4.address }}"
+      register: output
+
+    - local_action: 
+        module: copy 
+        content: "{{ output }}"
+        dest: /home/localusr/ansible/lab5/lab5.log
+...

@@ -1,0 +1,16 @@
+---
+# Edit remote host http.conf
+- name: edit remote http condfig and then restart process
+  hosts: suosu02
+  tasks:
+  - name: edit httpd config
+    lineinfile:
+      path: /etc/httpd/conf/httpd.conf
+      regexp: '^Listen '
+      insertafter: '^#Listen '
+      line: Listen 8080
+  - name: restart service httpd to take effect
+    service:
+      name: httpd
+      state: restarted
+...

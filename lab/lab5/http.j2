@@ -1,0 +1,11 @@
+listen {{ ansible_default_ipv4.address }}:443
+NameVirtualHost {{ ansible_nodename }}
+
+<VirtualHost {{ ansible_nodename }}:443>
+  ServerName: {{ ansible_nodename }}
+  DocumentRoot /var/www/html
+  SSLEngine On
+  SSLCertificateFile /etc/httpd/conf.d/ssl/{{ ansible_nodename }}.crt
+  SSLCertificateKeyFile /etc/httpd/conf.d/ssl/{{ ansible_nodename }}.key
+</VirtualHost>
+

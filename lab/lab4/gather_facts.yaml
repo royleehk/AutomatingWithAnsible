@@ -1,0 +1,11 @@
+---
+# Gather facts
+- name: Collect only facts 
+  hosts: linux
+  tasks:
+  - name: gather min fact
+    setup:
+      fact_path: /home/localusr/ansible/lab4
+      gather_subset:
+        - min
+...

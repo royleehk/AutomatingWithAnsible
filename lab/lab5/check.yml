@@ -1,0 +1,20 @@
+---
+- hosts: linux
+  vars: 
+    web_daemon: httpd
+  tasks:
+    - name: check httpd services status
+      command: /usr/bin/systemctl is-active {{ web_daemon }}
+      ignore_errors: yes
+      register: result
+
+    - debug:
+        msg:
+          - "Server {{ inventory_hostname }} is a web server running {{ web_daemon }}"
+          - "System {{ inventory_hostname }} is running {{ ansible_os_family }}"
+          - "uuid is {{ ansible_product_uuid }}"
+          - "IPv4 address {{ ansible_all_ipv4_addresses }}"
+          - "Memory {{ ansible_memory_mb.real.total }}"
+      when: result.rc == 0
+
+...

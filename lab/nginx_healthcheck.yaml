@@ -1,0 +1,9 @@
+---
+# NGINX
+- name: monitor nginx
+  hosts: node1.example.com
+  tasks:
+   - name: nginx
+     nginx_status_facts:
+       url: http://suosu01
+...

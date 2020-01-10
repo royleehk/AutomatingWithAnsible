@@ -1,0 +1,10 @@
+---
+# Get facts
+- name: get solaris facts
+  hosts: suosu02
+  tasks:
+  - name: get subnet
+    setup:
+      gather_subset: hardware
+      tree: /home/localusr/ansible/fact.d
+...

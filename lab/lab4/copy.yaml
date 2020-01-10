@@ -1,0 +1,24 @@
+---
+# copy shell scripts to remote host
+- name: copy
+  hosts: all
+  vars: 
+    remote_dir: /etc/ansible/facts.d
+    facts_file: /home/localusr/ansible/lab4/custom.facts
+  tasks:
+  - name: Create a directory if it does not exist
+    register: result
+    file:
+      path: "{{ remote_dir }}"
+      state: directory
+      recurse: yes
+
+  - name: Copy file with owner and permissions
+    register: result
+    copy:
+      src: "{{ facts_file }}"
+      dest: "{{ remote_dir }}"
+
+  - debug:
+      var: result
+...

@@ -1,0 +1,17 @@
+---
+- hosts: linux
+  vars:
+    firewall: firewalld
+
+  tasks:
+    - name: install firewalld
+      yum:
+        name: "{{ firewall }}"
+        state: latest
+
+    - name: start firewalld
+      service:
+        name: "{{ firewall }}"
+        state: started
+        enabled: true
+...

@@ -1,0 +1,13 @@
+---
+- hosts: solaris
+  become: false
+  tasks:
+    - name: Collect only facts returned by facter
+      setup:
+        gather_subset:
+      register: result
+
+
+    - debug:
+        var: result
+...

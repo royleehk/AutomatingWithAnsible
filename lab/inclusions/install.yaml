@@ -1,0 +1,15 @@
+---
+# install httpd and copy index page to remote host
+- name: install and copy
+  hosts: suosu02
+  tasks:
+  - name: call install yaml to install package
+    include: install_and_start.yaml
+    vars:
+      package: httpd
+      service: httpd
+      state: started
+    register: output
+  - name: debugs
+    debug:
+      var: output

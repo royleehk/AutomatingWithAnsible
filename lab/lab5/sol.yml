@@ -1,0 +1,10 @@
+--- 
+- hosts: solaris
+  become: false
+  tasks:
+    - debug:
+        msg: 
+          - "System {{ inventory_hostname }} is running {{ ansible_os_family }}" 
+          #- "uuid is {{ ansible_product_uuid }}" 
+          - "IPv4 address {{ ansible_all_ipv4_addresses }}"
+...

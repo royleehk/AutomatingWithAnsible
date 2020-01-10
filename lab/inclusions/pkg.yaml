@@ -1,0 +1,12 @@
+---
+- name: install pkgs
+  hosts: suosu02
+  tasks:
+    - name: include packages
+      include_vars: packages.yaml
+
+    - name: installs {{ packages.my_pkgs }}
+      yum:
+        name: "{{ packages.my_pkgs }}"
+        state: latest
+...

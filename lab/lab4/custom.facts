@@ -1,0 +1,11 @@
+[packages]
+    smb_package: samba
+    ftp_package: vsftpd
+    db_package: mariadb-server
+    web_package: httpd
+
+[services]
+    smb_serive: smb
+    ftp_serive: vsftpd
+    db_serive: mariadb
+    web_serive: httpd

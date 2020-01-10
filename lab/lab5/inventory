@@ -1,0 +1,19 @@
+[all]
+suosu01
+suosu02 ansible_host=202.45.244.160
+
+[controller]
+controller.example.com
+
+[linux]
+suosu01
+suosu02
+
+[solaris]
+cs01.hit.com.hk
+
+[file]
+suosu01
+
+[lamp]
+suosu02
